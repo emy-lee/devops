@@ -1,0 +1,19 @@
+● httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; vendor preset: disabled)
+   Active: failed (Result: exit-code) since lun 2018-11-05 19:21:31 CET; 36s ago
+     Docs: man:httpd(8)
+           man:apachectl(8)
+  Process: 1953 ExecStop=/bin/kill -WINCH ${MAINPID} (code=exited, status=1/FAILURE)
+  Process: 1952 ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND (code=exited, status=1/FAILURE)
+ Main PID: 1952 (code=exited, status=1/FAILURE)
+
+nov 05 19:21:31 localhost.localdomain httpd[1952]: (13)Permission denied: AH00072: make_sock: could not bind to address [::]:8081
+nov 05 19:21:31 localhost.localdomain httpd[1952]: (13)Permission denied: AH00072: make_sock: could not bind to address 0.0.0.0:8081
+nov 05 19:21:31 localhost.localdomain httpd[1952]: no listening sockets available, shutting down
+nov 05 19:21:31 localhost.localdomain httpd[1952]: AH00015: Unable to open logs
+nov 05 19:21:31 localhost.localdomain systemd[1]: httpd.service: main process exited, code=exited, status=1/FAILURE
+nov 05 19:21:31 localhost.localdomain kill[1953]: kill: cannot find process ""
+nov 05 19:21:31 localhost.localdomain systemd[1]: httpd.service: control process exited, code=exited status=1
+nov 05 19:21:31 localhost.localdomain systemd[1]: Failed to start The Apache HTTP Server.
+nov 05 19:21:31 localhost.localdomain systemd[1]: Unit httpd.service entered failed state.
+nov 05 19:21:31 localhost.localdomain systemd[1]: httpd.service failed.
